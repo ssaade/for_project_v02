@@ -14,6 +14,10 @@ class Match < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :receiving_user,
+             :through => :recipient_availability,
+             :source => :user
+
   # Validations
 
 end
