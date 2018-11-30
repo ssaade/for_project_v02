@@ -1,0 +1,68 @@
+<h1>
+  Edit slot #<%= @slot.id %>
+</h1>
+
+<hr>
+
+<!-- Form slot start -->
+<form action="/update_slot/<%= @slot.id %>" method="post">
+<!-- Form slot end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @slot.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for date start -->
+  <div class="form-group">
+    <label for="date">
+      Date
+    </label>
+
+    <!-- Input for date start -->
+    <input type="text" id="date" name="date" class="form-control" value="<%= @slot.date %>">
+    <!-- Input for date end -->
+  </div>
+  <!-- Label and input for date end -->
+
+  <!-- Label and input for start start -->
+  <div class="form-group">
+    <label for="start">
+      Start
+    </label>
+
+    <!-- Input for start start -->
+    <input type="text" id="start" name="start" class="form-control" value="<%= @slot.start %>">
+    <!-- Input for start end -->
+  </div>
+  <!-- Label and input for start end -->
+
+  <!-- Label and input for end start -->
+  <div class="form-group">
+    <label for="end">
+      End
+    </label>
+
+    <!-- Input for end start -->
+    <input type="text" id="end" name="end" class="form-control" value="<%= @slot.end %>">
+    <!-- Input for end end -->
+  </div>
+  <!-- Label and input for end end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update slot
+  </button>
+</form>
+
+<hr>
+
+<a href="/slots">
+  Go back
+</a>

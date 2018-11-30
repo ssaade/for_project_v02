@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Slot #<%= @slot.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/slots" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link slot start -->
+      <div class="col">
+        <a href="/slots/<%= @slot.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit slot
+        </a>
+      </div>
+      <!-- Edit link slot end -->
+
+      <!-- Delete link slot start -->
+      <div class="col">
+        <a href="/delete_slot/<%= @slot.id %>" class="btn btn-block btn-outline-secondary">
+          Delete slot
+        </a>
+      </div>
+      <!-- Delete link slot end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @slot.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Date
+      </dt>
+      <!-- Display date start -->
+      <dd>
+        <%= @slot.date %>
+      </dd>
+      <!-- Display date end -->
+
+      <dt>
+        Start
+      </dt>
+      <!-- Display start start -->
+      <dd>
+        <%= @slot.start %>
+      </dd>
+      <!-- Display start end -->
+
+      <dt>
+        End
+      </dt>
+      <!-- Display end start -->
+      <dd>
+        <%= @slot.end %>
+      </dd>
+      <!-- Display end end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@slot.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@slot.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
