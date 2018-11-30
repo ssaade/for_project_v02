@@ -14,6 +14,8 @@ RSpec.describe Match, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:sending_user) }
+
     it { should have_one(:receiving_user) }
 
     end

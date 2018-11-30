@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :sent_matches,
+             :through => :slots,
+             :source => :sent_matches
+
   has_many   :received_matches,
              :through => :slots,
              :source => :recipient_matches
