@@ -1,6 +1,9 @@
 class Match < ApplicationRecord
   # Direct associations
 
+  has_many   :comments,
+             :dependent => :destroy
+
   belongs_to :recipient_availability,
              :class_name => "Slot",
              :counter_cache => :recipient_matches_count
