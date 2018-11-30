@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for match_id start -->
-    <input type="text" id="match_id" name="match_id" class="form-control">
+    <%= select_tag(:match_id, options_from_collection_for_select(Match.all, :id, :date, @comment.match_id), :class => "form-control") %>
     <!-- Input for match_id end -->
   </div>
   <!-- Label and input for match_id end -->
