@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the State resource:
+
+  # CREATE
+  get("/states/new", { :controller => "states", :action => "new_form" })
+  post("/create_state", { :controller => "states", :action => "create_row" })
+
+  # READ
+  get("/states", { :controller => "states", :action => "index" })
+  get("/states/:id_to_display", { :controller => "states", :action => "show" })
+
+  # UPDATE
+  get("/states/:prefill_with_id/edit", { :controller => "states", :action => "edit_form" })
+  post("/update_state/:id_to_modify", { :controller => "states", :action => "update_row" })
+
+  # DELETE
+  get("/delete_state/:id_to_remove", { :controller => "states", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Match resource:
 
   # CREATE

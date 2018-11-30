@@ -1,0 +1,64 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      State #<%= @state.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/states" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link state start -->
+      <div class="col">
+        <a href="/states/<%= @state.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit state
+        </a>
+      </div>
+      <!-- Edit link state end -->
+
+      <!-- Delete link state start -->
+      <div class="col">
+        <a href="/delete_state/<%= @state.id %>" class="btn btn-block btn-outline-secondary">
+          Delete state
+        </a>
+      </div>
+      <!-- Delete link state end -->
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @state.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@state.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@state.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
