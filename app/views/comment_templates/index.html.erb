@@ -62,13 +62,21 @@
 
         <!-- Display comment.match_id start -->
         <td>
-          <%= comment.match.date %>
+          <% if comment.match.present? %>
+            <a href="/matches/<%= comment.match.id %>">
+              <%= comment.match.date %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.match_id end -->
 
         <!-- Display comment.author_id start -->
         <td>
-          <%= comment.author.email %>
+          <% if comment.author.present? %>
+            <a href="/users/<%= comment.author.id %>">
+              <%= comment.author.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.author_id end -->
 

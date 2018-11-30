@@ -61,7 +61,11 @@
       </dt>
       <!-- Display sender_availability_id start -->
       <dd>
-        <%= @match.sender_availability_id %>
+        <% if @match.sender_availability.present? %>
+          <a href="/slots/<%= @match.sender_availability_id %>">
+            <%= @match.sender_availability.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display sender_availability_id end -->
 
@@ -70,7 +74,11 @@
       </dt>
       <!-- Display recipient_availability_id start -->
       <dd>
-        <%= @match.recipient_availability_id %>
+        <% if @match.recipient_availability.present? %>
+          <a href="/slots/<%= @match.recipient_availability_id %>">
+            <%= @match.recipient_availability.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display recipient_availability_id end -->
 

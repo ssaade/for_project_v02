@@ -92,13 +92,21 @@
 
         <!-- Display match.sender_availability_id start -->
         <td>
-          <%= match.sender_availability.user_id %>
+          <% if match.sender_availability.present? %>
+            <a href="/slots/<%= match.sender_availability.id %>">
+              <%= match.sender_availability.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display match.sender_availability_id end -->
 
         <!-- Display match.recipient_availability_id start -->
         <td>
-          <%= match.recipient_availability.user_id %>
+          <% if match.recipient_availability.present? %>
+            <a href="/slots/<%= match.recipient_availability.id %>">
+              <%= match.recipient_availability.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display match.recipient_availability_id end -->
 

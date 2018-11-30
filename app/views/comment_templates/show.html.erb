@@ -38,7 +38,11 @@
       </dt>
       <!-- Display match_id start -->
       <dd>
-        <%= @comment.match_id %>
+        <% if @comment.match.present? %>
+          <a href="/matches/<%= @comment.match_id %>">
+            <%= @comment.match.date %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display match_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display author_id start -->
       <dd>
-        <%= @comment.author_id %>
+        <% if @comment.author.present? %>
+          <a href="/users/<%= @comment.author_id %>">
+            <%= @comment.author.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display author_id end -->
 
