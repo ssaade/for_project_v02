@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/comments/new", { :controller => "comments", :action => "new_form" })
   post("/create_comment", { :controller => "comments", :action => "create_row" })
+  post("/create_comment_from_match", { :controller => "comments", :action => "create_row_from_match" })
 
   # READ
   get("/comments", { :controller => "comments", :action => "index" })
@@ -47,6 +48,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/matches/new", { :controller => "matches", :action => "new_form" })
   post("/create_match", { :controller => "matches", :action => "create_row" })
+  post("/create_match_from_slot", { :controller => "matches", :action => "create_row_from_slot" })
 
   # READ
   get("/matches", { :controller => "matches", :action => "index" })

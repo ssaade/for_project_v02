@@ -6,6 +6,7 @@ class MatchesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @match = Match.find(params.fetch("id_to_display"))
 
     render("match_templates/show.html.erb")
@@ -31,6 +32,44 @@ class MatchesController < ApplicationController
       @match.save
 
       redirect_back(:fallback_location => "/matches", :notice => "Match created successfully.")
+    else
+      render("match_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_slot
+    @match = Match.new
+
+    @match.date = params.fetch("date")
+    @match.start = params.fetch("start")
+    @match.end = params.fetch("end")
+    @match.sender_availability_id = params.fetch("sender_availability_id")
+    @match.recipient_availability_id = params.fetch("recipient_availability_id")
+    @match.state_id = params.fetch("state_id")
+
+    if @match.valid?
+      @match.save
+
+      redirect_to("/slots/#{@match.sender_availability_id}", notice: "Match created successfully.")
+    else
+      render("match_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_slot
+    @match = Match.new
+
+    @match.date = params.fetch("date")
+    @match.start = params.fetch("start")
+    @match.end = params.fetch("end")
+    @match.sender_availability_id = params.fetch("sender_availability_id")
+    @match.recipient_availability_id = params.fetch("recipient_availability_id")
+    @match.state_id = params.fetch("state_id")
+
+    if @match.valid?
+      @match.save
+
+      redirect_to("/slots/#{@match.recipient_availability_id}", notice: "Match created successfully.")
     else
       render("match_templates/new_form_with_errors.html.erb")
     end

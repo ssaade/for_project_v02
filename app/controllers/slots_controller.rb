@@ -6,6 +6,7 @@ class SlotsController < ApplicationController
   end
 
   def show
+    @match = Match.new
     @slot = Slot.find(params.fetch("id_to_display"))
 
     render("slot_templates/show.html.erb")
