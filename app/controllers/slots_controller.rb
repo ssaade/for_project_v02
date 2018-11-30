@@ -34,8 +34,8 @@ class SlotsController < ApplicationController
 
     @slot.user_id = params.fetch("user_id")
     @slot.date = params.fetch("date")
-    @slot.start = params.fetch("start")
-    @slot.end = params.fetch("end")
+    @slot.start_time = params.fetch("start_time")
+    @slot.end_time = params.fetch("end_time")
 
     if @slot.valid?
       @slot.save
@@ -57,8 +57,8 @@ class SlotsController < ApplicationController
 
     
     @slot.date = params.fetch("date")
-    @slot.start = params.fetch("start")
-    @slot.end = params.fetch("end")
+    @slot.start_time = params.fetch("start_time")
+    @slot.end_time = params.fetch("end_time")
 
     if @slot.valid?
       @slot.save

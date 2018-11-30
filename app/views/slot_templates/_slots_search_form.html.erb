@@ -2,17 +2,17 @@
   <p class="lead">Narrow results:</p>
 
   <div class="form-group">
-    <%= f.label :end, "End" %>
+    <%= f.label :end_time, "End time" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='endgteqPicker' data-target-input="nearest">
-          <%= f.text_field :end_gteq, :class => "form-control datetimepicker-input", :placeholder => "End greater than or equal to", :data => {:target => '#endgteqPicker'} %>
-          <div class="input-group-append" data-target='#endgteqPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='end_timegteqPicker' data-target-input="nearest">
+          <%= f.text_field :end_time_gteq, :class => "form-control datetimepicker-input", :placeholder => "End time greater than or equal to", :data => {:target => '#end_timegteqPicker'} %>
+          <div class="input-group-append" data-target='#end_timegteqPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
           </div>
           <script type="text/javascript">
             $(function () {
-                $('#endgteqPicker').datetimepicker({
+                $('#end_timegteqPicker').datetimepicker({
                   format: 'LT'
                 });
             });
@@ -20,14 +20,14 @@
         </div>
       </div>
       <div class='col-md-6'>
-        <div class='input-group date' id='endlteqPicker' data-target-input="nearest">
-          <%= f.text_field :end_lteq, :class => "form-control datetimepicker-input", :placeholder => "End less than or equal to", :data => {:target => '#endlteqPicker'} %>
-          <div class="input-group-append" data-target='#endlteqPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='end_timelteqPicker' data-target-input="nearest">
+          <%= f.text_field :end_time_lteq, :class => "form-control datetimepicker-input", :placeholder => "End time less than or equal to", :data => {:target => '#end_timelteqPicker'} %>
+          <div class="input-group-append" data-target='#end_timelteqPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
           </div>
           <script type="text/javascript">
             $(function () {
-                $('#endlteqPicker').datetimepicker({
+                $('#end_timelteqPicker').datetimepicker({
                   format: 'LT'
                 });
             });
@@ -38,17 +38,17 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :start, "Start" %>
+    <%= f.label :start_time, "Start time" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='startgteqPicker' data-target-input="nearest">
-          <%= f.text_field :start_gteq, :class => "form-control datetimepicker-input", :placeholder => "Start greater than or equal to", :data => {:target => '#startgteqPicker'} %>
-          <div class="input-group-append" data-target='#startgteqPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='start_timegteqPicker' data-target-input="nearest">
+          <%= f.text_field :start_time_gteq, :class => "form-control datetimepicker-input", :placeholder => "Start time greater than or equal to", :data => {:target => '#start_timegteqPicker'} %>
+          <div class="input-group-append" data-target='#start_timegteqPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
           </div>
           <script type="text/javascript">
             $(function () {
-                $('#startgteqPicker').datetimepicker({
+                $('#start_timegteqPicker').datetimepicker({
                   format: 'LT'
                 });
             });
@@ -56,14 +56,14 @@
         </div>
       </div>
       <div class='col-md-6'>
-        <div class='input-group date' id='startlteqPicker' data-target-input="nearest">
-          <%= f.text_field :start_lteq, :class => "form-control datetimepicker-input", :placeholder => "Start less than or equal to", :data => {:target => '#startlteqPicker'} %>
-          <div class="input-group-append" data-target='#startlteqPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='start_timelteqPicker' data-target-input="nearest">
+          <%= f.text_field :start_time_lteq, :class => "form-control datetimepicker-input", :placeholder => "Start time less than or equal to", :data => {:target => '#start_timelteqPicker'} %>
+          <div class="input-group-append" data-target='#start_timelteqPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
           </div>
           <script type="text/javascript">
             $(function () {
-                $('#startlteqPicker').datetimepicker({
+                $('#start_timelteqPicker').datetimepicker({
                   format: 'LT'
                 });
             });
