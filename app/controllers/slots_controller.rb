@@ -10,7 +10,7 @@ class SlotsController < ApplicationController
   end
 
   def index
-    @slots = Slot.all
+    @slots = current_user.slots.page(params[:page]).per(10)
 
     render("slot_templates/index.html.erb")
   end
