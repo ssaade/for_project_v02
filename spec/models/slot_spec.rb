@@ -4,6 +4,8 @@ RSpec.describe Slot, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:sent_matches) }
+
     it { should belong_to(:user) }
 
     end
