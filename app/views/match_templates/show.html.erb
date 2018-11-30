@@ -1,0 +1,109 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Match #<%= @match.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/matches" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link match start -->
+      <div class="col">
+        <a href="/matches/<%= @match.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit match
+        </a>
+      </div>
+      <!-- Edit link match end -->
+
+      <!-- Delete link match start -->
+      <div class="col">
+        <a href="/delete_match/<%= @match.id %>" class="btn btn-block btn-outline-secondary">
+          Delete match
+        </a>
+      </div>
+      <!-- Delete link match end -->
+    </div>
+
+    <dl>
+      <dt>
+        Date
+      </dt>
+      <!-- Display date start -->
+      <dd>
+        <%= @match.date %>
+      </dd>
+      <!-- Display date end -->
+
+      <dt>
+        Start
+      </dt>
+      <!-- Display start start -->
+      <dd>
+        <%= @match.start %>
+      </dd>
+      <!-- Display start end -->
+
+      <dt>
+        End
+      </dt>
+      <!-- Display end start -->
+      <dd>
+        <%= @match.end %>
+      </dd>
+      <!-- Display end end -->
+
+      <dt>
+        Sender availability
+      </dt>
+      <!-- Display sender_availability_id start -->
+      <dd>
+        <%= @match.sender_availability_id %>
+      </dd>
+      <!-- Display sender_availability_id end -->
+
+      <dt>
+        Recipient availability
+      </dt>
+      <!-- Display recipient_availability_id start -->
+      <dd>
+        <%= @match.recipient_availability_id %>
+      </dd>
+      <!-- Display recipient_availability_id end -->
+
+      <dt>
+        State
+      </dt>
+      <!-- Display state_id start -->
+      <dd>
+        <%= @match.state_id %>
+      </dd>
+      <!-- Display state_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@match.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@match.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

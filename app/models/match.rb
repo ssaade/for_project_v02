@@ -1,0 +1,8 @@
+class Match < ApplicationRecord
+  # Direct associations
+
+  # Indirect associations
+
+  # Validations
+
+end
