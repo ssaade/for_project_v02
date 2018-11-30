@@ -1,6 +1,7 @@
 class StatesController < ApplicationController
   def index
-    @states = State.page(params[:page]).per(10)
+    @q = State.ransack(params[:q])
+    @states = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("state_templates/index.html.erb")
   end

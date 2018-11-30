@@ -1,0 +1,188 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "matches_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :date, "Date" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='dategteqPicker' data-target-input="nearest">
+          <%= f.text_field :date_gteq, :class => "form-control datetimepicker-input", :placeholder => "Date greater than or equal to", :data => {:target => '#dategteqPicker'} %>
+          <div class="input-group-append" data-target='#dategteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='datelteqPicker' data-target-input="nearest">
+          <%= f.text_field :date_lteq, :class => "form-control datetimepicker-input", :placeholder => "Date less than or equal to", :data => {:target => '#datelteqPicker'} %>
+          <div class="input-group-append" data-target='#datelteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#dategteqPicker').datetimepicker({
+              format: 'MM/DD/YYYY'
+          });
+          $('#datelteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'MM/DD/YYYY'
+          });
+          $('#dategteqPicker').on("dp.change", function (e) {
+              $('#datelteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#datelteqPicker').on("dp.change", function (e) {
+              $('#dategteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :state_id, "State" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :state_id_gteq, :class => "form-control", :placeholder => "State greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :state_id_lteq, :class => "form-control", :placeholder => "State less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :end, "End" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='endgteqPicker' data-target-input="nearest">
+          <%= f.text_field :end_gteq, :class => "form-control datetimepicker-input", :placeholder => "End greater than or equal to", :data => {:target => '#endgteqPicker'} %>
+          <div class="input-group-append" data-target='#endgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+          </div>
+          <script type="text/javascript">
+            $(function () {
+                $('#endgteqPicker').datetimepicker({
+                  format: 'LT'
+                });
+            });
+          </script>
+        </div>
+      </div>
+      <div class='col-md-6'>
+        <div class='input-group date' id='endlteqPicker' data-target-input="nearest">
+          <%= f.text_field :end_lteq, :class => "form-control datetimepicker-input", :placeholder => "End less than or equal to", :data => {:target => '#endlteqPicker'} %>
+          <div class="input-group-append" data-target='#endlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+          </div>
+          <script type="text/javascript">
+            $(function () {
+                $('#endlteqPicker').datetimepicker({
+                  format: 'LT'
+                });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :start, "Start" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='startgteqPicker' data-target-input="nearest">
+          <%= f.text_field :start_gteq, :class => "form-control datetimepicker-input", :placeholder => "Start greater than or equal to", :data => {:target => '#startgteqPicker'} %>
+          <div class="input-group-append" data-target='#startgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+          </div>
+          <script type="text/javascript">
+            $(function () {
+                $('#startgteqPicker').datetimepicker({
+                  format: 'LT'
+                });
+            });
+          </script>
+        </div>
+      </div>
+      <div class='col-md-6'>
+        <div class='input-group date' id='startlteqPicker' data-target-input="nearest">
+          <%= f.text_field :start_lteq, :class => "form-control datetimepicker-input", :placeholder => "Start less than or equal to", :data => {:target => '#startlteqPicker'} %>
+          <div class="input-group-append" data-target='#startlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+          </div>
+          <script type="text/javascript">
+            $(function () {
+                $('#startlteqPicker').datetimepicker({
+                  format: 'LT'
+                });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :receiving_user_email_cont, "User email contains" %>
+    <%= f.text_field :receiving_user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sending_user_email_cont, "User email contains" %>
+    <%= f.text_field :sending_user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+  </div>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/matches" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#matches_filters">
+  Show filters
+</a>

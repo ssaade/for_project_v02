@@ -10,7 +10,8 @@ class SlotsController < ApplicationController
   end
 
   def index
-    @slots = current_user.slots.page(params[:page]).per(10)
+    @q = current_user.slots.ransack(params[:q])
+    @slots = @q.result(:distinct => true).includes(:user, :sent_matches, :recipient_matches).page(params[:page]).per(10)
 
     render("slot_templates/index.html.erb")
   end
