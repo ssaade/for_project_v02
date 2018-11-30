@@ -13,17 +13,21 @@
 
       <!-- Edit link slot start -->
       <div class="col">
-        <a href="/slots/<%= @slot.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit slot
-        </a>
+        <% if current_user == @slot.user %>
+          <a href="/slots/<%= @slot.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit slot
+          </a>
+        <% end %>
       </div>
       <!-- Edit link slot end -->
 
       <!-- Delete link slot start -->
       <div class="col">
-        <a href="/delete_slot/<%= @slot.id %>" class="btn btn-block btn-outline-secondary">
-          Delete slot
-        </a>
+        <% if current_user == @slot.user %>
+          <a href="/delete_slot/<%= @slot.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete slot
+          </a>
+        <% end %>
       </div>
       <!-- Delete link slot end -->
     </div>
