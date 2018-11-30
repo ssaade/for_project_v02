@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @comment.present? %>
+  <% if @comment.errors.any? %>
+    <% @comment.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new comment
+</h1>
+
+
+<hr>
+
+<!-- Form comment start -->
+<form action="/create_comment" method="post">
+<!-- Form comment end -->
+
+  <!-- Label and input for match_id start -->
+  <div class="form-group">
+    <label for="match_id">
+      Match
+    </label>
+
+    <!-- Input for match_id start -->
+    <input type="text" id="match_id" name="match_id" class="form-control" value="<%= @comment.match_id %>">
+    <!-- Input for match_id end -->
+  </div>
+  <!-- Label and input for match_id end -->
+
+  <!-- Label and input for author_id start -->
+  <div class="form-group">
+    <label for="author_id">
+      Author
+    </label>
+
+    <!-- Input for author_id start -->
+    <input type="text" id="author_id" name="author_id" class="form-control" value="<%= @comment.author_id %>">
+    <!-- Input for author_id end -->
+  </div>
+  <!-- Label and input for author_id end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <input type="text" id="body" name="body" class="form-control" value="<%= @comment.body %>">
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/comments">
+  Go back
+</a>
