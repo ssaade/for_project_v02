@@ -44,7 +44,7 @@ class SlotsController < ApplicationController
   def update_row
     @slot = Slot.find(params.fetch("id_to_modify"))
 
-    @slot.user_id = params.fetch("user_id")
+    
     @slot.date = params.fetch("date")
     @slot.start = params.fetch("start")
     @slot.end = params.fetch("end")
