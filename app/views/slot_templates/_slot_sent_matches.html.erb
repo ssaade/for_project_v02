@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @slot.sent_matches.each do |match| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/matches/<%= match.id %>">
           <%= match.date %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_match_from_sender_availability/<%= match.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="slot_sent_matches_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "slot_templates/slot_sent_matches_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

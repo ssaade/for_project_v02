@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @match.present? %>
   <% if @match.errors.any? %>
     <% @match.errors.full_messages.each do |message| %>
@@ -16,81 +15,55 @@
 
 <hr>
 
-<!-- Form match start -->
 <form action="/create_match" method="post">
-<!-- Form match end -->
 
-  <!-- Label and input for date start -->
   <div class="form-group">
     <label for="date">
       Date
     </label>
 
-    <!-- Input for date start -->
     <input type="text" id="date" name="date" class="form-control" value="<%= @match.date %>">
-    <!-- Input for date end -->
   </div>
-  <!-- Label and input for date end -->
 
-  <!-- Label and input for start start -->
   <div class="form-group">
     <label for="start">
       Start
     </label>
 
-    <!-- Input for start start -->
     <input type="text" id="start" name="start" class="form-control" value="<%= @match.start %>">
-    <!-- Input for start end -->
   </div>
-  <!-- Label and input for start end -->
 
-  <!-- Label and input for end start -->
   <div class="form-group">
     <label for="end">
       End
     </label>
 
-    <!-- Input for end start -->
     <input type="text" id="end" name="end" class="form-control" value="<%= @match.end %>">
-    <!-- Input for end end -->
   </div>
-  <!-- Label and input for end end -->
 
-  <!-- Label and input for sender_availability_id start -->
   <div class="form-group">
     <label for="sender_availability_id">
       Sender availability
     </label>
 
-    <!-- Input for sender_availability_id start -->
     <%= select_tag(:sender_availability_id, options_from_collection_for_select(Slot.all, :id, :user_id, @match.sender_availability_id), :class => "form-control") %>
-    <!-- Input for sender_availability_id end -->
   </div>
-  <!-- Label and input for sender_availability_id end -->
 
-  <!-- Label and input for recipient_availability_id start -->
   <div class="form-group">
     <label for="recipient_availability_id">
       Recipient availability
     </label>
 
-    <!-- Input for recipient_availability_id start -->
     <%= select_tag(:recipient_availability_id, options_from_collection_for_select(Slot.all, :id, :user_id, @match.recipient_availability_id), :class => "form-control") %>
-    <!-- Input for recipient_availability_id end -->
   </div>
-  <!-- Label and input for recipient_availability_id end -->
 
-  <!-- Label and input for state_id start -->
   <div class="form-group">
     <label for="state_id">
       State
     </label>
 
-    <!-- Input for state_id start -->
     <input type="text" id="state_id" name="state_id" class="form-control" value="<%= @match.state_id %>">
-    <!-- Input for state_id end -->
   </div>
-  <!-- Label and input for state_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create match

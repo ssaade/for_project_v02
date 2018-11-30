@@ -5,39 +5,25 @@
 
 <hr>
 
-<!-- Form comment start -->
 <form action="/create_comment" method="post">
-<!-- Form comment end -->
 
-  <!-- Label and input for match_id start -->
   <div class="form-group">
     <label for="match_id">
       Match
     </label>
 
-    <!-- Input for match_id start -->
     <%= select_tag(:match_id, options_from_collection_for_select(Match.all, :id, :date, @comment.match_id), :class => "form-control") %>
-    <!-- Input for match_id end -->
   </div>
-  <!-- Label and input for match_id end -->
 
-  <!-- Label and input for author_id start -->
-  <!-- Input for "author_id" start -->
   <input type="hidden" name="author_id" value="<%= current_user.id %>">
-  <!-- Input for "author_id" end -->
-  <!-- Label and input for author_id end -->
 
-  <!-- Label and input for body start -->
   <div class="form-group">
     <label for="body">
       Body
     </label>
 
-    <!-- Input for body start -->
     <input type="text" id="body" name="body" class="form-control">
-    <!-- Input for body end -->
   </div>
-  <!-- Label and input for body end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create comment

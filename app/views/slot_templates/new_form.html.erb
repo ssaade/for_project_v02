@@ -5,51 +5,33 @@
 
 <hr>
 
-<!-- Form slot start -->
 <form action="/create_slot" method="post">
-<!-- Form slot end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for date start -->
   <div class="form-group">
     <label for="date">
       Date
     </label>
 
-    <!-- Input for date start -->
     <input type="text" id="date" name="date" class="form-control">
-    <!-- Input for date end -->
   </div>
-  <!-- Label and input for date end -->
 
-  <!-- Label and input for start start -->
   <div class="form-group">
     <label for="start">
       Start
     </label>
 
-    <!-- Input for start start -->
     <input type="text" id="start" name="start" class="form-control">
-    <!-- Input for start end -->
   </div>
-  <!-- Label and input for start end -->
 
-  <!-- Label and input for end start -->
   <div class="form-group">
     <label for="end">
       End
     </label>
 
-    <!-- Input for end start -->
     <input type="text" id="end" name="end" class="form-control">
-    <!-- Input for end end -->
   </div>
-  <!-- Label and input for end end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create slot

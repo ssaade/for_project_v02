@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link match start -->
       <div class="col">
         <a href="/matches/<%= @match.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit match
         </a>
       </div>
-      <!-- Edit link match end -->
 
-      <!-- Delete link match start -->
       <div class="col">
         <a href="/delete_match/<%= @match.id %>" class="btn btn-block btn-outline-secondary">
           Delete match
         </a>
       </div>
-      <!-- Delete link match end -->
     </div>
 
     <dl>
       <dt>
         Date
       </dt>
-      <!-- Display date start -->
       <dd>
         <%= @match.date %>
       </dd>
-      <!-- Display date end -->
 
       <dt>
         Start
       </dt>
-      <!-- Display start start -->
       <dd>
         <%= @match.start %>
       </dd>
-      <!-- Display start end -->
 
       <dt>
         End
       </dt>
-      <!-- Display end start -->
       <dd>
         <%= @match.end %>
       </dd>
-      <!-- Display end end -->
 
       <dt>
         Sender availability
       </dt>
-      <!-- Display sender_availability_id start -->
       <dd>
         <% if @match.sender_availability.present? %>
           <a href="/slots/<%= @match.sender_availability_id %>">
@@ -67,12 +56,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display sender_availability_id end -->
 
       <dt>
         Recipient availability
       </dt>
-      <!-- Display recipient_availability_id start -->
       <dd>
         <% if @match.recipient_availability.present? %>
           <a href="/slots/<%= @match.recipient_availability_id %>">
@@ -80,39 +67,31 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display recipient_availability_id end -->
 
       <dt>
         State
       </dt>
-      <!-- Display state_id start -->
       <dd>
         <%= @match.state_id %>
       </dd>
-      <!-- Display state_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@match.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@match.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "match_templates/match_comments" %>
@@ -130,4 +109,3 @@
     <%= render partial: "match_templates/match_sending_user" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

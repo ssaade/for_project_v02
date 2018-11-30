@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "slot_templates/slots_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,13 +58,10 @@
 
       <% @slots.each do |slot| %>
       <tr>
-        <!-- Display slot.id start -->
         <td>
           <%= slot.id %>
         </td>
-        <!-- Display slot.id end -->
 
-        <!-- Display slot.user_id start -->
         <td>
           <% if slot.user.present? %>
             <a href="/users/<%= slot.user.id %>">
@@ -76,37 +69,26 @@
             </a>
           <% end %>
         </td>
-        <!-- Display slot.user_id end -->
 
-        <!-- Display slot.date start -->
         <td>
           <%= slot.date %>
         </td>
-        <!-- Display slot.date end -->
 
-        <!-- Display slot.start start -->
         <td>
           <%= slot.start %>
         </td>
-        <!-- Display slot.start end -->
 
-        <!-- Display slot.end start -->
         <td>
           <%= slot.end %>
         </td>
-        <!-- Display slot.end end -->
 
-        <!-- Display slot.created_at start -->
         <td>
           <%= time_ago_in_words(slot.created_at) %> ago
         </td>
-        <!-- Display slot.created_at end -->
 
-        <!-- Display slot.updated_at start -->
         <td>
           <%= time_ago_in_words(slot.updated_at) %> ago
         </td>
-        <!-- Display slot.updated_at end -->
 
         <td>
           <a href="/slots/<%= slot.id %>">

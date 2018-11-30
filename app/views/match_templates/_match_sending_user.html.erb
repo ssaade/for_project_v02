@@ -6,11 +6,9 @@
   <ul class="list-group list-group-flush">
     <% @match.sending_user.each do |user| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/users/<%= user.id %>">
           <%= user.email %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>
