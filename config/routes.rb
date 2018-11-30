@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_comment/:id_to_remove", { :controller => "comments", :action => "destroy_row" })
+  get("/delete_comment_from_match/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_match" })
+  get("/delete_comment_from_author/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_author" })
 
   #------------------------------
 
@@ -56,6 +58,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_match/:id_to_remove", { :controller => "matches", :action => "destroy_row" })
+  get("/delete_match_from_recipient_availability/:id_to_remove", { :controller => "matches", :action => "destroy_row_from_recipient_availability" })
+  get("/delete_match_from_sender_availability/:id_to_remove", { :controller => "matches", :action => "destroy_row_from_sender_availability" })
 
   #------------------------------
 
@@ -75,6 +79,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_slot/:id_to_remove", { :controller => "slots", :action => "destroy_row" })
+  get("/delete_slot_from_user/:id_to_remove", { :controller => "slots", :action => "destroy_row_from_user" })
 
   #------------------------------
 

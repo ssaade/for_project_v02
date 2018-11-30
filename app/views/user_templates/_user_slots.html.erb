@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Slots
+
+    <a data-toggle="collapse" href="#user_slots_new_form">
+      Add slot
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.slots.each do |slot| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/slots/<%= slot.id %>">
+          <%= slot.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

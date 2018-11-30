@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Received Matches
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.received_matches.each do |match| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/matches/<%= match.id %>">
+          <%= match.date %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

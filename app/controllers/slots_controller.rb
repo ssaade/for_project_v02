@@ -57,6 +57,14 @@ class SlotsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @slot = Slot.find(params.fetch("id_to_remove"))
+
+    @slot.destroy
+
+    redirect_to("/users/#{@slot.user_id}", notice: "Slot deleted successfully.")
+  end
+
   def destroy_row
     @slot = Slot.find(params.fetch("id_to_remove"))
 

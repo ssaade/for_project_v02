@@ -61,6 +61,22 @@ class MatchesController < ApplicationController
     end
   end
 
+  def destroy_row_from_sender_availability
+    @match = Match.find(params.fetch("id_to_remove"))
+
+    @match.destroy
+
+    redirect_to("/slots/#{@match.sender_availability_id}", notice: "Match deleted successfully.")
+  end
+
+  def destroy_row_from_recipient_availability
+    @match = Match.find(params.fetch("id_to_remove"))
+
+    @match.destroy
+
+    redirect_to("/slots/#{@match.recipient_availability_id}", notice: "Match deleted successfully.")
+  end
+
   def destroy_row
     @match = Match.find(params.fetch("id_to_remove"))
 
